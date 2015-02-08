@@ -1,0 +1,17 @@
+#!/usr/bin/env python
+
+import fileinput
+import os
+import sys
+
+from tact import sentence
+
+
+for line in fileinput.input():
+    line = line.strip()
+
+    for s in sentence.do_punkt(line):
+        if not s:
+            continue
+
+        print s.encode("utf-8")
