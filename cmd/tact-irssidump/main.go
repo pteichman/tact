@@ -33,7 +33,7 @@ func main() {
 }
 
 var logline = regexp.MustCompile(
-	`^[0-9][0-9]:[0-9][0-9] <(.*?)> ([A-Za-z0-9_]+[:,] )?(.*)`)
+	`^[0-9][0-9]:[0-9][0-9] <(.*?)> ([A-Za-z0-9_]+[:,] |@[A-Za-z0-9_]+:?)?(.*)`)
 
 func dump(r io.Reader, ignores []string) error {
 	s := bufio.NewScanner(r)
